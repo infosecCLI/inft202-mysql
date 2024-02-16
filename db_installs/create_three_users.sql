@@ -3,22 +3,23 @@ CREATE DATABASE IF NOT EXISTS create_three_users;
 USE create_three_users;
 
 -- create rt_user
+-- check if rt_user exists and drop if it does
 SELECT 'DROPPING USER rt_user' AS 'INSTALLATION STARTED';
 
-DROP USER IF EXISTS 'rt_user'@'localhost';
+DROP USER IF EXISTS 'rt_user'@'%';
 
 SELECT 'ADDING USER rt_user' AS 'INSTALLATION PROGRESSING';
 
 CREATE USER 'rt_user'@'%'
-IDENTIFIED BY 'rt_password'
+IDENTIFIED BY 'super_secret_pswd_911'
 PASSWORD EXPIRE INTERVAL 90 DAY
-PASSWORD HISTORY IDENTIFIED 5
-PASSWORD REUSE INTERVAL 365
-DAY FAILED_LOGIN_ATTEMPTS 0
+PASSWORD HISTORY 5
+PASSWORD REUSE INTERVAL 365 DAY
+FAILED_LOGIN_ATTEMPTS 0
 PASSWORD_LOCK_TIME 0;
 
 -- revoke all privileges and grant option from 'rt_user'@'localhost'
-REVOKE ALL, GRANT OPTION FROM 'rt_user'@'localhost';
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'rt_user'@'localhost';
 
 -- grant ALL privileges on *.* to 'rt_user'@'localhost'
 GRANT ALL ON *.* TO 'rt_user'@'localhost';
@@ -41,15 +42,15 @@ DROP USER IF EXISTS 'brt_user'@'localhost';
 SELECT 'ADDING USER brt_user' AS 'INSTALLATION PROGRESSING';
 
 CREATE USER 'brt_user'@'%'
-IDENTIFIED BY 'brt_password'
+IDENTIFIED BY 'super_secret_pswd_911'
 PASSWORD EXPIRE INTERVAL 90 DAY
-PASSWORD HISTORY IDENTIFIED 5
-PASSWORD REUSE INTERVAL 365
-DAY FAILED_LOGIN_ATTEMPTS 0
+PASSWORD HISTORY 5
+PASSWORD REUSE INTERVAL 365 DAY
+FAILED_LOGIN_ATTEMPTS 0
 PASSWORD_LOCK_TIME 0;
 
 -- revoke all privileges and grant option from 'brt_user'@'localhost'
-REVOKE ALL, GRANT OPTION FROM 'brt_user'@'localhost';
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM 'brt_user'@'localhost';
 
 -- grant ALL privileges on *.* to 'brt_user'@'localhost'
 GRANT ALL ON *.* TO 'brt_user'@'localhost';
@@ -72,7 +73,7 @@ DROP USER IF EXISTS 'admin_007'@'localhost';
 SELECT 'ADDING USER admin_007' AS 'INSTALLATION PROGRESSING';
 
 CREATE USER 'admin_007'@'%'
-IDENTIFIED BY 'admin_password'
+IDENTIFIED BY 'guttmanGrizzlies_2024'
 PASSWORD EXPIRE INTERVAL 90 DAY
 PASSWORD HISTORY IDENTIFIED 5
 PASSWORD REUSE INTERVAL 365
