@@ -6,7 +6,7 @@ USE create_three_users;
 -- check if rt_user exists and drop if it does
 SELECT 'DROPPING USER rt_user' AS 'INSTALLATION STARTED';
 
-DROP USER IF EXISTS 'rt_user'@'localhost';
+DROP USER IF EXISTS 'rt_user'@'%';
 
 SELECT 'ADDING USER rt_user' AS 'INSTALLATION PROGRESSING';
 
@@ -19,7 +19,7 @@ FAILED_LOGIN_ATTEMPTS 0
 PASSWORD_LOCK_TIME 0;
 
 -- revoke all privileges and grant option from 'rt_user'@'localhost'
-REVOKE ALL, GRANT OPTION FROM 'rt_user'@'localhost';
+REVOKE ALL, GRANT OPTION FROM 'rt_user'@'%';
 
 -- grant ALL privileges on *.* to 'rt_user'@'localhost'
 GRANT ALL ON *.* TO 'rt_user'@'localhost';
@@ -77,8 +77,8 @@ CREATE USER 'admin_007'@'%'
 IDENTIFIED BY 'guttmanGrizzlies_2024'
 PASSWORD EXPIRE INTERVAL 90 DAY
 PASSWORD HISTORY IDENTIFIED 5
-PASSWORD REUSE INTERVAL 365
-DAY FAILED_LOGIN_ATTEMPTS 4
+PASSWORD REUSE INTERVAL 365 DAY
+FAILED_LOGIN_ATTEMPTS 4
 PASSWORD_LOCK_TIME UNBOUNDED;
 
 -- revoke all privileges and grant option from 'admin_007'@'%'
@@ -88,11 +88,11 @@ REVOKE ALL, GRANT OPTION FROM 'admin_007'@'%';
 SELECT user, show_db_priv, account_locked
 FROM mysql.user;
 
--- grant SELECT privilege on classicmodels.* to 'admin_007'@'%'
-GRANT SELECT ON classicmodels.* TO 'admin_007'@'%';
-
 -- return an informational message to indicate completion of user addition
 SELECT 'ADDED USER admin_007' AS 'INSTALLATION COMPLETED';
+
+-- grant SELECT privilege on classicmodels.* to 'admin_007'@'%'
+GRANT SELECT ON classicmodels.* TO 'admin_007'@'%';
 
 -- very last line
 FLUSH PRIVILEGES;
