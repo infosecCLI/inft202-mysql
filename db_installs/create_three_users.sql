@@ -96,4 +96,3 @@ GRANT SELECT ON classicmodels.* TO 'admin_007'@'%';
 
 -- very last line
 FLUSH PRIVILEGES;
--- wtf
