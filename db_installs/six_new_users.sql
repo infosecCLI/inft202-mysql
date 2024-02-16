@@ -1,0 +1,5 @@
+DROP DATABASE IF EXISTS six_new_users;
+CREATE DATABASE IF NOT EXISTS six_new_users;
+USE six_new_users;
+
+FLUSH PRIVILEGES;
