@@ -81,3 +81,17 @@ REVOKE ALL, GRANT OPTION FROM 'admin_006'@'%';
 GRANT SELECT ON classicmodels.* TO 'admin_006'@'%';
 
 FLUSH PRIVILEGES;
+
+-- create read_only_classicmodels_db role
+CREATE ROLE read_only_classicmodels_db;
+
+-- create admin_user role
+CREATE ROLE admin_user;
+
+-- create read_only_employees_db role
+CREATE ROLE read_only_employees_db;
+
+-- create app_user role
+CREATE ROLE app_user;
+
+FLUSH PRIVILEGES;
