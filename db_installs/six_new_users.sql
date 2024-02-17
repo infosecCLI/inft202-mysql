@@ -79,9 +79,6 @@ PASSWORD REUSE INTERVAL 365 DAY;
 
 REVOKE ALL, GRANT OPTION FROM 'admin_006'@'%';
 GRANT SELECT ON classicmodels.* TO 'admin_006'@'%';
-
-FLUSH PRIVILEGES;
-
 -- create roles
 
 -- create read_only_classicmodels_db role
@@ -95,9 +92,6 @@ CREATE ROLE IF NOT EXISTS read_only_employees_db;
 
 -- create app_user role
 CREATE ROLE IF NOT EXISTS app_user;
-
-FLUSH PRIVILEGES;
-
 -- grant select
 
 -- grant select on classicmodels.* to read_only_classicmodels_db
@@ -117,9 +111,6 @@ GRANT SHOW DATABASES ON *.* TO admin_user;
 
 -- grant insert, update on employees.employees to app_user
 GRANT INSERT, UPDATE ON employees.employees TO app_user;
-
-FLUSH PRIVILEGES;
-
 -- grant roles to users
 
 -- grant admin_007 to admin_006
@@ -137,8 +128,7 @@ GRANT app_user TO admin_006;
 -- grant admin_user to admin_005
 GRANT admin_user TO admin_005;
 
-
-FLUSH PRIVILEGES;
-
 -- very last line
-FLUSH PRIVILEGES;
+-- FLUSH PRIVILEGES;
+-- remove FLUSH PRIVILEGES per you don’t need to run FLUSH PRIVILEGES command (this is effective for a long time already, please forget about it !),
+-- https://dev.mysql.com/blog-archive/how-to-grant-privileges-to-users-in-mysql-80/
