@@ -82,25 +82,19 @@ GRANT SELECT ON classicmodels.* TO 'admin_006'@'%';
 
 FLUSH PRIVILEGES;
 
-/*
 -- create roles
 
 -- create read_only_classicmodels_db role
-CREATE ROLE read_only_classicmodels_db;
+CREATE ROLE IF NOT EXISTS read_only_classicmodels_db;
 
 -- create admin_user role
-CREATE ROLE admin_user;
+CREATE ROLE IF NOT EXISTS admin_user;
 
 -- create read_only_employees_db role
-CREATE ROLE read_only_employees_db;
+CREATE ROLE IF NOT EXISTS read_only_employees_db;
 
 -- create app_user role
-CREATE ROLE app_user;
-
-
-FLUSH PRIVILEGES;
-
--- note
+CREATE ROLE IF NOT EXISTS app_user;
 
 FLUSH PRIVILEGES;
 
@@ -108,6 +102,9 @@ FLUSH PRIVILEGES;
 
 FLUSH PRIVILEGES;
 
-*/
+-- note
+
+FLUSH PRIVILEGES;
+
 -- very last line
 FLUSH PRIVILEGES;
