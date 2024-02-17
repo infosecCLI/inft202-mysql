@@ -120,7 +120,23 @@ GRANT INSERT, UPDATE ON employees.employees TO app_user;
 
 FLUSH PRIVILEGES;
 
--- note
+-- grant roles to users
+
+-- grant admin_007 to admin_006
+GRANT admin_007 TO admin_006;
+
+-- grant read_only_classicmodels_db to admin_001 and admin_003
+GRANT read_only_classicmodels_db TO admin_001, admin_003;
+
+-- grant read_only_employees_db to admin_002 and admin_004
+GRANT read_only_employees_db TO admin_002, admin_004;
+
+-- grant app_user to admin_006
+GRANT app_user TO admin_006;
+
+-- grant admin_user to admin_005
+GRANT admin_user TO admin_005;
+
 
 FLUSH PRIVILEGES;
 
