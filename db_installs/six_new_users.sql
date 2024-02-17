@@ -98,7 +98,25 @@ CREATE ROLE IF NOT EXISTS app_user;
 
 FLUSH PRIVILEGES;
 
--- note
+-- grant select
+
+-- grant select on classicmodels.* to read_only_classicmodels_db
+GRANT SELECT ON classicmodels.* TO read_only_classicmodels_db;
+
+-- grant select on employees.* to read_only_employees_db
+GRANT SELECT ON employees.* TO read_only_employees_db;
+
+-- grant create, drop on employees.* to admin_user
+GRANT CREATE, DROP ON employees.* TO admin_user;
+
+-- grant create, drop on classicmodels.* to admin_user
+GRANT CREATE, DROP ON classicmodels.* TO admin_user;
+
+-- grant show databases on *.* to admin_user
+GRANT SHOW DATABASES ON *.* TO admin_user;
+
+-- grant insert, update on employees.employees to app_user
+GRANT INSERT, UPDATE ON employees.employees TO app_user;
 
 FLUSH PRIVILEGES;
 
