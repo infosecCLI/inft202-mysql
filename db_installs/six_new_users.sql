@@ -132,3 +132,4 @@ GRANT admin_user TO admin_005;
 -- FLUSH PRIVILEGES;
 -- remove FLUSH PRIVILEGES per you don’t need to run FLUSH PRIVILEGES command (this is effective for a long time already, please forget about it !),
 -- https://dev.mysql.com/blog-archive/how-to-grant-privileges-to-users-in-mysql-80/
+-- Reloading the grant tables is necessary to enable updates to MySQL privileges and users only if you make such changes directly to the grant tables; it is not needed for account management statements such as GRANT or REVOKE, which take effect immediately. See Section 8.2.13, “When Privilege Changes Take Effect”, for more information https://dev.mysql.com/doc/refman/8.3/en/privilege-changes.html
