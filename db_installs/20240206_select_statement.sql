@@ -68,5 +68,8 @@ INSERT INTO customer (name) VALUES ('');
 -- populate salestransaction table
 INSERT INTO salestransaction (name) VALUES ('');
 
+-- populate soldvia table
+INSERT INTO soldvia (name) VALUES ('');
+
 -- FLUSH PRIVILEGES;
 -- end
