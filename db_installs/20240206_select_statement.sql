@@ -65,6 +65,16 @@ CREATE TABLE IF NOT EXISTS products_info (
   FOREIGN KEY (category_id) REFERENCES categories(id)
 );
 
+-- create products table
+DROP TABLE IF EXISTS products;
+CREATE TABLE IF NOT EXISTS products (
+  id INT AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  product_info_id INT,
+  PRIMARY KEY(id),
+  FOREIGN KEY (product_info_id) REFERENCES products_info(id)
+);
+
 -- populate categories table
 INSERT INTO categories (name) VALUES ('CP'), ('FW');
 
@@ -83,7 +93,7 @@ INSERT INTO salestransaction (name) VALUES ('');
 -- populate soldvia table
 INSERT INTO soldvia (name) VALUES ('');
 
--- insert data
+-- insert data into products_info
 INSERT INTO products_info (name, price, vendor_id, category_id) VALUES
 ('Zzz Bag', 100.00, (SELECT id FROM vendors WHERE name = 'PG'), (SELECT id FROM categories WHERE name = 'CP')),
 ('Easy Boot', 70.00, (SELECT id FROM vendors WHERE name = 'MK'), (SELECT id FROM categories WHERE name = 'FW')),
