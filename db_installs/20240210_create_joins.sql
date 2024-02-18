@@ -129,4 +129,9 @@ FROM members m
 RIGHT JOIN committees c ON m.name = c.committee_name
 WHERE m.member_id IS NULL;
 
+-- CROSS JOIN using columns member and committee name
+SELECT *
+FROM members
+CROSS JOIN committees;
+
 --
