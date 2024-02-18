@@ -13,5 +13,13 @@ CREATE TABLE IF NOT EXISTS categories (
   PRIMARY KEY(id)
 );
 
+-- table: vendors
+DROP TABLE IF EXISTS vendors;
+CREATE TABLE IF NOT EXISTS vendors (
+  id INT AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  PRIMARY KEY(id)
+);
+
 -- FLUSH PRIVILEGES;
 -- end
