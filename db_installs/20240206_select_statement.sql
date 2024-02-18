@@ -29,5 +29,21 @@ CREATE TABLE IF NOT EXISTS region (
   PRIMARY KEY(id)
 );
 
+-- table: customer
+DROP TABLE IF EXISTS customer;
+CREATE TABLE IF NOT EXISTS customer (
+  id INT AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  PRIMARY KEY(id)
+);
+
+-- table: salestransaction
+DROP TABLE IF EXISTS salestransaction;
+CREATE TABLE IF NOT EXISTS salestransaction (
+  id INT AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  PRIMARY KEY(id)
+);
+
 -- FLUSH PRIVILEGES;
 -- end
