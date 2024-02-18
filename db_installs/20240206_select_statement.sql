@@ -65,5 +65,8 @@ INSERT INTO region (name) VALUES ('');
 -- populate customer table
 INSERT INTO customer (name) VALUES ('');
 
+-- populate salestransaction table
+INSERT INTO salestransaction (name) VALUES ('');
+
 -- FLUSH PRIVILEGES;
 -- end
