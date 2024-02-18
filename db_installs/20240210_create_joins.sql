@@ -123,4 +123,10 @@ FROM members m
 LEFT JOIN committees c ON m.name = c.committee_name
 WHERE c.committee_name IS NULL;
 
+-- add ANTI-RIGHT JOIN JOIN using columns member and committee name
+SELECT *
+FROM members m
+RIGHT JOIN committees c ON m.name = c.committee_name
+WHERE m.member_id IS NULL;
+
 --
