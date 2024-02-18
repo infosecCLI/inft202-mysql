@@ -21,5 +21,13 @@ CREATE TABLE IF NOT EXISTS vendors (
   PRIMARY KEY(id)
 );
 
+-- table: region
+DROP TABLE IF EXISTS region;
+CREATE TABLE IF NOT EXISTS region (
+  id INT AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  PRIMARY KEY(id)
+);
+
 -- FLUSH PRIVILEGES;
 -- end
