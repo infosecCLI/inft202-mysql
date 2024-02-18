@@ -53,6 +53,18 @@ CREATE TABLE IF NOT EXISTS soldvia (
   PRIMARY KEY(id)
 );
 
+-- create table products_info
+CREATE TABLE IF NOT EXISTS products_info (
+  id INT AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  price DECIMAL(10, 2) NOT NULL,
+  vendor_id INT,
+  category_id INT,
+  PRIMARY KEY(id),
+  FOREIGN KEY (vendor_id) REFERENCES vendors(id),
+  FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
 -- populate categories table
 INSERT INTO categories (name) VALUES ('CP'), ('FW');
 
@@ -70,6 +82,8 @@ INSERT INTO salestransaction (name) VALUES ('');
 
 -- populate soldvia table
 INSERT INTO soldvia (name) VALUES ('');
+
+
 
 -- FLUSH PRIVILEGES;
 -- end
