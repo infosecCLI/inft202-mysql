@@ -59,5 +59,8 @@ INSERT INTO categories (name) VALUES ('CP'), ('FW');
 -- populate vendors table
 INSERT INTO vendors (name) VALUES ('PG'), ('MK');
 
+-- populate region table
+INSERT INTO region (name) VALUES ('');
+
 -- FLUSH PRIVILEGES;
 -- end
