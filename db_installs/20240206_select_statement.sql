@@ -53,8 +53,11 @@ CREATE TABLE IF NOT EXISTS soldvia (
   PRIMARY KEY(id)
 );
 
--- Populate categories table
+-- populate categories table
 INSERT INTO categories (name) VALUES ('CP'), ('FW');
+
+-- populate vendors table
+INSERT INTO vendors (name) VALUES ('PG'), ('MK');
 
 -- FLUSH PRIVILEGES;
 -- end
