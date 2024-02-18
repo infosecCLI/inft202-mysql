@@ -102,4 +102,9 @@ SELECT *
 FROM members m
 JOIN committees c ON m.committee_id = c.committee_id;
 
+-- inner join using columns member and committee_name
+SELECT *
+FROM members m
+INNER JOIN committees c ON m.committee_id = c.committee_id;
+
 --
