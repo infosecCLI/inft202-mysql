@@ -97,4 +97,9 @@ SELECT '6' AS 'ANTI RIGHT JOIN STATEMENTS' \G
 
 SELECT '7' AS 'CROSS JOIN STATEMENTS' \G
 
+-- add a JOIN using columns member and committee name
+SELECT *
+FROM members m
+JOIN committees c ON m.committee_id = c.committee_id;
+
 --
