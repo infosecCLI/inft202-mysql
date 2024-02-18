@@ -83,7 +83,14 @@ INSERT INTO salestransaction (name) VALUES ('');
 -- populate soldvia table
 INSERT INTO soldvia (name) VALUES ('');
 
-
+-- insert data
+INSERT INTO products_info (name, price, vendor_id, category_id) VALUES
+('Zzz Bag', 100.00, (SELECT id FROM vendors WHERE name = 'PG'), (SELECT id FROM categories WHERE name = 'CP')),
+('Easy Boot', 70.00, (SELECT id FROM vendors WHERE name = 'MK'), (SELECT id FROM categories WHERE name = 'FW')),
+('Cosy Sock', 15.00, (SELECT id FROM vendors WHERE name = 'MK'), (SELECT id FROM categories WHERE name = 'FW')),
+('Dura Boot', 90.00, (SELECT id FROM vendors WHERE name = 'PG'), (SELECT id FROM categories WHERE name = 'FW')),
+('Tiny Tent', 150.00, (SELECT id FROM vendors WHERE name = 'MK'), (SELECT id FROM categories WHERE name = 'CP')),
+('Biggy Tent', 250.00, (SELECT id FROM vendors WHERE name = 'MK'), (SELECT id FROM categories WHERE name = 'CP'));
 
 -- FLUSH PRIVILEGES;
 -- end
