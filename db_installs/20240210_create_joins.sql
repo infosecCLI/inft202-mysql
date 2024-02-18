@@ -112,4 +112,9 @@ SELECT *
 FROM members m
 LEFT JOIN committees c ON m.name = c.committee_name;
 
+-- add RIGHT JOIN using columns member and committee name
+SELECT *
+FROM members m
+RIGHT JOIN committees c ON m.name = c.committee_name;
+
 --
