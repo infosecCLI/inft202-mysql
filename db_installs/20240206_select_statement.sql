@@ -102,5 +102,10 @@ INSERT INTO products_info (name, price, vendor_id, category_id) VALUES
 ('Tiny Tent', 150.00, (SELECT id FROM vendors WHERE name = 'MK'), (SELECT id FROM categories WHERE name = 'CP')),
 ('Biggy Tent', 250.00, (SELECT id FROM vendors WHERE name = 'MK'), (SELECT id FROM categories WHERE name = 'CP'));
 
+-- populate products table from products_info
+INSERT INTO products (name, product_info_id)
+SELECT pi.name, pi.id
+FROM products_info pi;
+
 -- FLUSH PRIVILEGES;
 -- end
