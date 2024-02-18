@@ -45,5 +45,13 @@ CREATE TABLE IF NOT EXISTS salestransaction (
   PRIMARY KEY(id)
 );
 
+-- table: soldvia
+DROP TABLE IF EXISTS soldvia;
+CREATE TABLE IF NOT EXISTS soldvia (
+  id INT AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  PRIMARY KEY(id)
+);
+
 -- FLUSH PRIVILEGES;
 -- end
