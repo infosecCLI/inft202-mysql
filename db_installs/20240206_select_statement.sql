@@ -62,5 +62,8 @@ INSERT INTO vendors (name) VALUES ('PG'), ('MK');
 -- populate region table
 INSERT INTO region (name) VALUES ('');
 
+-- populate customer table
+INSERT INTO customer (name) VALUES ('');
+
 -- FLUSH PRIVILEGES;
 -- end
